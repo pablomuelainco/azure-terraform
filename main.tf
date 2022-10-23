@@ -142,8 +142,8 @@ resource "azurerm_linux_virtual_machine" "endava_terraform_vm" {
   }
 
     computer_name                   = "endavavm"
-    admin_username                  = "endavauser"
-    admin_password                  = "EndavaPwd!"
+    admin_username                  = "" #define this
+    admin_password                  = "" #define this
     disable_password_authentication = false
 
   boot_diagnostics {
@@ -153,7 +153,7 @@ resource "azurerm_linux_virtual_machine" "endava_terraform_vm" {
   connection {
     host = self.public_ip_address
     type = "ssh"
-    user = "endavauser"
+    user = "" #define this
     password = "${var.admin_password}"
     timeout = "2m"
     agent = false
