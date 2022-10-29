@@ -164,7 +164,7 @@ resource "azurerm_linux_virtual_machine" "endava_terraform_vm" {
         "sudo apt update -y",
         "sudo apt install docker.io -y",
         "sudo git clone https://github.com/pablomuelainco/cicdworkshop.git",
-        "sudo cd /home/endavauser/cicdworkshop",
+        "cd /home/endavauser/cicdworkshop",
         "sudo docker build . -t cicdworkshop:latest",  
         "sudo docker run -dp 80:80 cicdworkshop:latest",
     ]
